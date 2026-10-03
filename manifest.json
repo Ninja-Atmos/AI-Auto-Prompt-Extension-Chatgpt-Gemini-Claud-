@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Auto Continuous Prompter",
+  "version": "2.0",
+  "description": "Continuously generates prompts, waits for responses to complete, and sends the next.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://gemini.google.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
